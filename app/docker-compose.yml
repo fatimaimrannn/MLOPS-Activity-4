@@ -1,0 +1,28 @@
+version: '3.9'  # Use a compatible version
+
+services:
+  frontend:
+    build:
+      context: ./frontend  # Ensure this path is correct
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app  # This allows you to watch for changes in the frontend directory
+
+  backend:
+    build:
+      context: ./backend  # Ensure this path is correct
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app  # This allows you to watch for changes in the backend directory
+
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

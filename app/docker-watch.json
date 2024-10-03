@@ -1,0 +1,13 @@
+{
+  "dockerComposeFile": "docker-compose.yml",
+  "services": {
+    "frontend": {
+      "action": "rebuild",
+      "files": ["./frontend/**/*"]
+    },
+    "backend": {
+      "action": "rebuild",
+      "files": ["./backend/**/*"]
+    }
+  }
+}
